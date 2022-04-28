@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author USUARIO
+ * @author gecr
  */
 public class ClienteDao {
     
@@ -25,14 +25,15 @@ public class ClienteDao {
     ResultSet rs;
     
     public boolean RegistrarCliente(Cliente cl){
-        String sql = "INSERT INTO clientes (dui, nombre, telefono, direccion) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO clientes (dui, nombre, telefono, direccion, razon) VALUES (?,?,?,?,?)";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setString(1, cl.getDni());
+            ps.setString(1, cl.getDui());
             ps.setString(2, cl.getNombre());
             ps.setString(3, cl.getTelefono());
             ps.setString(4, cl.getDireccion());
+            ps.setString(5, cl.getRazon());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -57,7 +58,7 @@ public class ClienteDao {
            while (rs.next()) {               
                Cliente cl = new Cliente();
                cl.setId(rs.getInt("id"));
-               cl.setDni(rs.getString("dui"));
+               cl.setDui(rs.getString("dui"));
                cl.setNombre(rs.getString("nombre"));
                cl.setTelefono(rs.getString("telefono"));
                cl.setDireccion(rs.getString("direccion"));
@@ -92,7 +93,7 @@ public class ClienteDao {
        String sql = "UPDATE clientes SET dui=?, nombre=?, telefono=?, direccion=? WHERE id=?";
        try {
            ps = con.prepareStatement(sql);   
-           ps.setString(1, cl.getDni());
+           ps.setString(1, cl.getDui());
            ps.setString(2, cl.getNombre());
            ps.setString(3, cl.getTelefono());
            ps.setString(4, cl.getDireccion());

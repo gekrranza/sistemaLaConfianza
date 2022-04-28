@@ -7,24 +7,26 @@ package modelos;
 
 /**
  *
- * @author USUARIO
+ * @author gecr
  */
 public class Cliente {
     private int id;
-    private String dni;
+    private String dui;
     private String nombre;
     private String telefono;
     private String direccion;
+    private String razon;
 
     public Cliente() {
     }
 
-    public Cliente(int id, String dni, String nombre, String telefono, String direccion) {
+    public Cliente(int id, String dui, String nombre, String telefono, String direccion, String razon) {
         this.id = id;
-        this.dni = dni;
+        this.dui = dui;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.razon = razon;
     }
 
     public int getId() {
@@ -35,12 +37,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getDni() {
-        return dni;
+    public String getDui() {
+        return dui;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setDui(String dui) {
+        this.dui = dui;
     }
 
     public String getNombre() {
@@ -66,5 +68,12 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
+ 
+    public String getRazon() {
+        return razon;
+    }
+
+    public void setRazon(String razon) {
+        this.razon = razon;
+    }
 }
