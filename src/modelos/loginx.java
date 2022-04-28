@@ -1,17 +1,17 @@
 
 package modelos;
 
-public class login {
+public class loginx {
     private int id;
     private String nombre;
     private String correo;
     private String password;
     private String rol;
 
-    public login() {
+    public loginx() {
     }
 
-    public login(int id, String nombre, String correo, String password, String rol) {
+    public loginx(int id, String nombre, String correo, String password, String rol) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;

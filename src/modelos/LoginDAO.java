@@ -14,9 +14,9 @@ public class LoginDAO {
     ResultSet rs;
     Conexion cn = new Conexion();
     
-    public login log(String correo, String pass){
-        login l = new login();
-        String sql = "SELECT * FROM usuarios WHERE correo = ? AND pass = ?";
+    public loginx log(String correo, String pass){
+        loginx l = new loginx();
+        String sql = "SELECT * FROM usuarios WHERE correo = ? AND password = ?";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -27,7 +27,7 @@ public class LoginDAO {
                 l.setId(rs.getInt("id"));
                 l.setNombre(rs.getString("nombre"));
                 l.setCorreo(rs.getString("correo"));
-                l.setPass(rs.getString("pass"));
+                l.setPass(rs.getString("password"));
                 l.setRol(rs.getString("rol"));
                 
             }
@@ -37,8 +37,8 @@ public class LoginDAO {
         return l;
     }
     
-    public boolean Registrar(login reg){
-        String sql = "INSERT INTO usuarios (nombre, correo, pass, rol) VALUES (?,?,?,?)";
+    public boolean Registrar(loginx reg){
+        String sql = "INSERT INTO usuarios (nombre, correo, password, rol) VALUES (?,?,?,?)";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
@@ -55,14 +55,14 @@ public class LoginDAO {
     }
     
     public List ListarUsuarios(){
-       List<login> Lista = new ArrayList();
+       List<loginx> Lista = new ArrayList();
        String sql = "SELECT * FROM usuarios";
        try {
            con = cn.getConnection();
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            while (rs.next()) {               
-               login lg = new login();
+               loginx lg = new loginx();
                lg.setId(rs.getInt("id"));
                lg.setNombre(rs.getString("nombre"));
                lg.setCorreo(rs.getString("correo"));

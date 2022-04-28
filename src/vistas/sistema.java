@@ -18,7 +18,7 @@ import modelos.Proveedor;
 import modelos.ProveedorDao;
 import modelos.Venta;
 import modelos.VentaDao;
-import modelos.login;
+import modelos.loginx;
 import reporte.Grafico;
 import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
@@ -46,7 +46,7 @@ public final class sistema extends javax.swing.JFrame {
     Detalle Dv = new Detalle();
     Config conf = new Config();
     Eventos event = new Eventos();
-    login lg = new login();
+    loginx lg = new loginx();
     LoginDAO login = new LoginDAO();
     DefaultTableModel modelo = new DefaultTableModel();
     DefaultTableModel tmp = new DefaultTableModel();
@@ -57,7 +57,7 @@ public final class sistema extends javax.swing.JFrame {
     public sistema() {
         initComponents();
     }
-    public sistema (login priv){
+    public sistema (loginx priv){
         initComponents();
         this.setLocationRelativeTo(null);
         Midate.setDate(fechaVenta);
@@ -109,7 +109,7 @@ public final class sistema extends javax.swing.JFrame {
 
     }
     public void ListarUsuarios() {
-        List<login> Listar = login.ListarUsuarios();
+        List<loginx> Listar = login.ListarUsuarios();
         modelo = (DefaultTableModel) TableUsuarios.getModel();
         Object[] ob = new Object[4];
         for (int i = 0; i < Listar.size(); i++) {
@@ -607,7 +607,7 @@ public final class sistema extends javax.swing.JFrame {
                 btnGraficarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
+        jPanel2.add(btnGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, 40));
         jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 210, 30));
 
         jLabel11.setText("Seleccionar:");
@@ -881,7 +881,7 @@ public final class sistema extends javax.swing.JFrame {
                                     .addComponent(jLabel20))
                                 .addGap(24, 24, 24)
                                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTelefonoProveedor)
+                                    .addComponent(txtTelefonoProveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                                     .addComponent(txtDireccionProveedor))))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
@@ -1313,7 +1313,6 @@ public final class sistema extends javax.swing.JFrame {
                 "Id", "Nombre", "Correo", "Rol"
             }
         ));
-        TableUsuarios.setRowHeight(20);
         jScrollPane6.setViewportView(TableUsuarios);
 
         jPanel12.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 540, 380));

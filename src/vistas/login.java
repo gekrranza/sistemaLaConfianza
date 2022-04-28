@@ -1,21 +1,39 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vistas;
+
+import javax.swing.JFrame;
+import modelos.LoginDAO;
+import modelos.loginx;
+
 
 /**
  *
  * @author gecar
  */
-public class login extends javax.swing.JFrame {
-
+public class login extends JFrame {
+            loginx lg =new loginx();
+            LoginDAO login = new LoginDAO();
     /**
      * Creates new form login
      */
-    public login() {
+   public login() {
         initComponents();
+        this.setLocationRelativeTo(null);
+    }
+    public void validar (){
+        String correo =txtCorreo.getText();
+        String pass = String.valueOf(txtPass.getPassword());
+        if(!"".equals(correo) || !"".equals(pass)) {
+
+            lg = login.log(correo, pass);
+            if (lg.getCorreo()!= null && lg.getPass() != null){
+                sistema sis = new sistema();
+                
+                sis.setVisible(true);
+                dispose();
+            }
+
+        }
     }
 
     /**
@@ -102,10 +120,11 @@ public class login extends javax.swing.JFrame {
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtCorreoActionPerformed
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        /*validar();
+        validar();
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     /**
@@ -117,31 +136,7 @@ public class login extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new login().setVisible(true);
-            }
-        });
-    }
+      
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciar;
@@ -154,4 +149,12 @@ public class login extends javax.swing.JFrame {
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JPasswordField txtPass;
     // End of variables declaration//GEN-END:variables
+
+    private Object getCorreo() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private Object getPass() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
