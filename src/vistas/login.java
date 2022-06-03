@@ -27,7 +27,7 @@ public class login extends JFrame {
         if(!"".equals(correo) || !"".equals(pass)) {
 
             lg = login.log(correo, pass);
-            if (lg.getCorreo()!= null && lg.getPass() != null){
+            if (lg.getCorreo()!= null && lg.getPass() != null ){
                 sistema sis = new sistema();
                 
                 sis.setVisible(true);
