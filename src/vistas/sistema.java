@@ -513,7 +513,7 @@ public final class sistema extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 560));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/encabezado.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, -20, 860, 120));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 860, 120));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -541,6 +541,11 @@ public final class sistema extends javax.swing.JFrame {
         jLabel7.setText("Stock Disponible");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
+        txtCodigoVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoVentaActionPerformed(evt);
+            }
+        });
         txtCodigoVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtCodigoVentaKeyPressed(evt);
@@ -602,7 +607,7 @@ public final class sistema extends javax.swing.JFrame {
         jPanel2.add(btnEliminarventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 110, -1, 40));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
-        jLabel8.setText("Dni/Ruc");
+        jLabel8.setText("Dui:");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 352, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
@@ -694,6 +699,18 @@ public final class sistema extends javax.swing.JFrame {
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel13.setText("Nombre:");
+
+        txtNombreCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreClienteKeyTyped(evt);
+            }
+        });
+
+        txtTelefonoCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoClienteKeyTyped(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("Télefono:");
@@ -839,8 +856,6 @@ public final class sistema extends javax.swing.JFrame {
                         .addGap(50, 50, 50))))
         );
 
-        jLabel12.getAccessibleContext().setAccessibleName("Dui:");
-
         jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 270, 330));
 
         jTabbedPane1.addTab("2", jPanel3);
@@ -878,11 +893,29 @@ public final class sistema extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setText("Ruc:");
 
+        txtRucProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRucProveedorKeyTyped(evt);
+            }
+        });
+
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setText("Nombre:");
 
+        txtNombreproveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreproveedorKeyTyped(evt);
+            }
+        });
+
         jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel19.setText("Teléfono:");
+
+        txtTelefonoProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoProveedorKeyTyped(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel20.setText("Dirección:");
@@ -917,6 +950,12 @@ public final class sistema extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel38.setText("Razón:");
+
+        txtRazonProveedor.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRazonProveedorKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1034,11 +1073,29 @@ public final class sistema extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel22.setText("Código:");
 
+        txtCodigoPro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCodigoProKeyTyped(evt);
+            }
+        });
+
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel23.setText("Descripción:");
 
+        txtDesPro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDesProKeyTyped(evt);
+            }
+        });
+
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel24.setText("Cantidad:");
+
+        txtCantPro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantProKeyTyped(evt);
+            }
+        });
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel25.setText("Precio:");
@@ -1240,10 +1297,40 @@ public final class sistema extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel31.setText("MENSAJE");
         jPanel7.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        txtRucConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtRucConfigKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtRucConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 147, 30));
+
+        txtNombreConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreConfigKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtNombreConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 220, 30));
+
+        txtTelefonoConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoConfigKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtTelefonoConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 218, 30));
+
+        txtDireccionConfig.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDireccionConfigKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtDireccionConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 147, 30));
+
+        txtMensaje.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtMensajeKeyTyped(evt);
+            }
+        });
         jPanel7.add(txtMensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 400, 30));
 
         btnActualizarConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
@@ -1320,6 +1407,12 @@ public final class sistema extends javax.swing.JFrame {
         jLabel36.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(0, 0, 255));
         jLabel36.setText("Nombre:");
+
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNombreKeyTyped(evt);
+            }
+        });
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel37.setForeground(new java.awt.Color(0, 0, 255));
@@ -1749,7 +1842,7 @@ public final class sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarClienteActionPerformed
 
     private void txtDniClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniClienteKeyTyped
-        // TODO add your handling code here:
+        event.numberKeyPress(evt);
     }//GEN-LAST:event_txtDniClienteKeyTyped
 
     private void TableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableClienteMouseClicked
@@ -1978,6 +2071,86 @@ public final class sistema extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Los campos esta vacios");
         }
     }//GEN-LAST:event_btnguardarProveedorActionPerformed
+
+    private void txtCodigoVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoVentaActionPerformed
+
+    private void txtTelefonoClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoClienteKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtTelefonoClienteKeyTyped
+
+    private void txtRucProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucProveedorKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtRucProveedorKeyTyped
+
+    private void txtTelefonoProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoProveedorKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtTelefonoProveedorKeyTyped
+
+    private void txtNombreproveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreproveedorKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtNombreproveedorKeyTyped
+
+    private void txtRazonProveedorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRazonProveedorKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtRazonProveedorKeyTyped
+
+    private void txtNombreClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreClienteKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtNombreClienteKeyTyped
+
+    private void txtDesProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDesProKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtDesProKeyTyped
+
+    private void txtNombreConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreConfigKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtNombreConfigKeyTyped
+
+    private void txtDireccionConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionConfigKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtDireccionConfigKeyTyped
+
+    private void txtMensajeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMensajeKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtMensajeKeyTyped
+
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
+        char c = evt.getKeyChar();
+        
+        if((c<'a' || c>'z') && (c<'A') |c>'Z') evt.consume();
+    }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtTelefonoConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoConfigKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtTelefonoConfigKeyTyped
+
+    private void txtRucConfigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRucConfigKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtRucConfigKeyTyped
+
+    private void txtCantProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantProKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtCantProKeyTyped
+
+    private void txtCodigoProKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoProKeyTyped
+        event.numberKeyPress(evt);
+    }//GEN-LAST:event_txtCodigoProKeyTyped
 
     /**
      * @param args the command line arguments

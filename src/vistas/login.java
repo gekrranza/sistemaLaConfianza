@@ -2,6 +2,7 @@
 package vistas;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import modelos.LoginDAO;
 import modelos.loginx;
 
@@ -32,7 +33,9 @@ public class login extends JFrame {
                 sis.setVisible(true);
                 dispose();
             }
-
+            else{
+                JOptionPane.showMessageDialog(null, "Datos incorrectos");
+            }
         }
     }
 
@@ -58,7 +61,7 @@ public class login extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "INICIAR SESIÓN", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(0, 102, 153))); // NOI18N
         jPanel2.setForeground(new java.awt.Color(0, 102, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

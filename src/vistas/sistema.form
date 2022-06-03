@@ -362,7 +362,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="200" y="-20" width="860" height="120"/>
+          <AbsoluteConstraints x="200" y="0" width="860" height="120"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -468,6 +468,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtCodigoVenta">
               <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCodigoVentaActionPerformed"/>
                 <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoVentaKeyPressed"/>
                 <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoVentaKeyTyped"/>
               </Events>
@@ -597,7 +598,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="13" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Dni/Ruc"/>
+                <Property name="text" type="java.lang.String" value="Dui:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -951,9 +952,6 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Dui:"/>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Dui:"/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtDniCliente">
                   <Events>
@@ -969,8 +967,14 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNombreCliente">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreClienteKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtTelefonoCliente">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoClienteKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
@@ -1277,6 +1281,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtRucProveedor">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRucProveedorKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel18">
                   <Properties>
@@ -1287,6 +1294,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNombreproveedor">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreproveedorKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel19">
                   <Properties>
@@ -1297,6 +1307,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtTelefonoProveedor">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoProveedorKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel20">
                   <Properties>
@@ -1359,6 +1372,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtRazonProveedor">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRazonProveedorKeyTyped"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1588,6 +1604,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtCodigoPro">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCodigoProKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel23">
                   <Properties>
@@ -1598,6 +1617,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtDesPro">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDesProKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel24">
                   <Properties>
@@ -1608,6 +1630,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtCantPro">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCantProKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel25">
                   <Properties>
@@ -1884,6 +1909,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtRucConfig">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRucConfigKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="20" y="130" width="147" height="30"/>
@@ -1891,6 +1919,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtNombreConfig">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreConfigKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="130" width="220" height="30"/>
@@ -1898,6 +1929,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTelefonoConfig">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoConfigKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="200" y="200" width="218" height="30"/>
@@ -1905,6 +1939,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtDireccionConfig">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtDireccionConfigKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="20" y="200" width="147" height="30"/>
@@ -1912,6 +1949,9 @@
               </Constraints>
             </Component>
             <Component class="javax.swing.JTextField" name="txtMensaje">
+              <Events>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtMensajeKeyTyped"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="20" y="270" width="400" height="30"/>
@@ -2159,6 +2199,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtNombre">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombreKeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel37">
                   <Properties>

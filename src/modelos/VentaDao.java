@@ -160,7 +160,7 @@ public class VentaDao {
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance(getClass().getResource("/Img/logo_pdf.png"));
+            Image img = Image.getInstance(getClass().getResource("/img/logoLibreria.png"));
             //Fecha
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLUE);
