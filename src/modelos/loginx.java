@@ -4,17 +4,17 @@ package modelos;
 public class loginx {
     private int id;
     private String nombre;
-    private String correo;
+    private String usuario;
     private String password;
     private String rol;
 
     public loginx() {
     }
 
-    public loginx(int id, String nombre, String correo, String password, String rol) {
+    public loginx(int id, String nombre, String usuario, String password, String rol) {
         this.id = id;
         this.nombre = nombre;
-        this.correo = correo;
+        this.usuario = usuario;
         this.password = password;
         this.rol = rol;
     }
@@ -36,12 +36,12 @@ public class loginx {
         this.nombre = nombre;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getPass() {

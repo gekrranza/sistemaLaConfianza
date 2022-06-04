@@ -26,7 +26,7 @@ public class LoginDAO {
             if (rs.next()) {
                 l.setId(rs.getInt("id"));
                 l.setNombre(rs.getString("nombre"));
-                l.setCorreo(rs.getString("correo"));
+                l.setUsuario(rs.getString("correo"));
                 l.setPass(rs.getString("password"));
                 l.setRol(rs.getString("rol"));
                 
@@ -43,7 +43,7 @@ public class LoginDAO {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.setString(1, reg.getNombre());
-            ps.setString(2, reg.getCorreo());
+            ps.setString(2, reg.getUsuario());
             ps.setString(3, reg.getPass());
             ps.setString(4, reg.getRol());
             ps.execute();
@@ -65,7 +65,7 @@ public class LoginDAO {
                loginx lg = new loginx();
                lg.setId(rs.getInt("id"));
                lg.setNombre(rs.getString("nombre"));
-               lg.setCorreo(rs.getString("correo"));
+               lg.setUsuario(rs.getString("correo"));
                lg.setRol(rs.getString("rol"));
                Lista.add(lg);
            }

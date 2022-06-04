@@ -2,32 +2,32 @@
 package modelos;
 
 public class Venta {
-    private int id;
+    private int id_venta;
     private int cliente;
     private String nombre_cli;
     private String vendedor;
     private double total;
-    private String fecha;
+    //private String fecha;
     
     public Venta(){
         
     }
 
-    public Venta(int id, int cliente, String nombre_cli, String vendedor, double total, String fecha) {
-        this.id = id;
+    public Venta(int id_venta, int cliente, String nombre_cli, String vendedor, double total) {
+        this.id_venta = id_venta;
         this.cliente = cliente;
         this.nombre_cli = nombre_cli;
         this.vendedor = vendedor;
         this.total = total;
-        this.fecha = fecha;
+        //this.fecha = fecha;
     }
 
-    public int getId() {
-        return id;
+    public int getIdVenta() {
+        return id_venta;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdVenta(int id_venta) {
+        this.id_venta = id_venta;
     }
 
     public int getCliente() {
@@ -62,13 +62,13 @@ public class Venta {
         this.total = total;
     }
 
-    public String getFecha() {
-        return fecha;
-    }
+    //public String getFecha() {
+     //   return fecha;
+    //}
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
+    //public void setFecha(String fecha) {
+      //  this.fecha = fecha;
+    //}
 
     
 

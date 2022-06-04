@@ -52,14 +52,14 @@ public class VentaDao {
     }
     
     public int RegistrarVenta(Venta v){
-        String sql = "INSERT INTO ventas (cliente, vendedor, total, fecha) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO ventas (cliente, vendedor, total) VALUES (?,?,?)";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
             ps.setInt(1, v.getCliente());
             ps.setString(2, v.getVendedor());
             ps.setDouble(3, v.getTotal());
-            ps.setString(4, v.getFecha());
+            //ps.setString(4, v.getFecha());
             ps.execute();
         } catch (SQLException e) {
             System.out.println(e.toString());
@@ -74,11 +74,11 @@ public class VentaDao {
     }
     
     public int RegistrarDetalle(Detalle Dv){
-       String sql = "INSERT INTO detalle (id_pro, cantidad, precio, id_venta) VALUES (?,?,?,?)";
+       String sql = "INSERT INTO detalle (codigo, cantidad, precio, id_venta) VALUES (?,?,?,?)";
         try {
             con = cn.getConnection();
             ps = con.prepareStatement(sql);
-            ps.setInt(1, Dv.getId_pro());
+            ps.setString(1, Dv.getCodProducto());
             ps.setInt(2, Dv.getCantidad());
             ps.setDouble(3, Dv.getPrecio());
             ps.setInt(4, Dv.getId());
@@ -112,14 +112,14 @@ public class VentaDao {
     
     public List Listarventas(){
        List<Venta> ListaVenta = new ArrayList();
-       String sql = "SELECT c.id AS id_cli, c.nombre, v.* FROM clientes c INNER JOIN ventas v ON c.id = v.cliente";
+       String sql = "SELECT c.id AS id_clie, c.nombre, v.* FROM clientes c INNER JOIN ventas v ON c.id = v.cliente";
        try {
            con = cn.getConnection();
            ps = con.prepareStatement(sql);
            rs = ps.executeQuery();
            while (rs.next()) {               
                Venta vent = new Venta();
-               vent.setId(rs.getInt("id"));
+               vent.setIdVenta(rs.getInt("id"));
                vent.setNombre_cli(rs.getString("nombre"));
                vent.setVendedor(rs.getString("vendedor"));
                vent.setTotal(rs.getDouble("total"));
@@ -139,23 +139,23 @@ public class VentaDao {
             ps.setInt(1, id);
             rs = ps.executeQuery();
             if (rs.next()) {
-                cl.setId(rs.getInt("id"));
+                cl.setIdVenta(rs.getInt("id"));
                 cl.setCliente(rs.getInt("cliente"));
                 cl.setTotal(rs.getDouble("total"));
                 cl.setVendedor(rs.getString("vendedor"));
-                cl.setFecha(rs.getString("fecha"));
+                //cl.setFecha(rs.getString("fecha"));
             }
         } catch (SQLException e) {
             System.out.println(e.toString());
         }
         return cl;
     }
-    public void pdfV(int idventa, int Cliente, double total, String usuario) {
+    public void pdfV(int id_venta, int Cliente, double total, String usuario) {
         try {
             Date date = new Date();
             FileOutputStream archivo;
             String url = FileSystemView.getFileSystemView().getDefaultDirectory().getPath();
-            File salida = new File(url + "venta.pdf");
+            File salida = new File(url, "venta.pdf");
             archivo = new FileOutputStream(salida);
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
@@ -165,7 +165,7 @@ public class VentaDao {
             Paragraph fecha = new Paragraph();
             Font negrita = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD, BaseColor.BLUE);
             fecha.add(Chunk.NEWLINE);
-            fecha.add("Vendedor: " + usuario + "\nFolio: " + idventa + "\nFecha: "
+            fecha.add("Vendedor: " + usuario + "\nFolio: " + id_venta + "\nFecha: "
                     + new SimpleDateFormat("dd/MM/yyyy").format(date) + "\n\n");
             PdfPTable Encabezado = new PdfPTable(4);
             Encabezado.setWidthPercentage(100);
@@ -255,10 +255,10 @@ public class VentaDao {
             tabla.addCell(c2);
             tabla.addCell(c3);
             tabla.addCell(c4);
-            String product = "SELECT d.id, d.id_pro,d.id_venta, d.precio, d.cantidad, p.id, p.nombre FROM detalle d INNER JOIN productos p ON d.id_pro = p.id WHERE d.id_venta = ?";
+            String product = "SELECT d.id, d.codigo,d.id_venta, d.precio, d.cantidad, p.id, p.nombre FROM detalle d INNER JOIN productos p ON d.codigo = p.id WHERE d.id = ?";
             try {
                 ps = con.prepareStatement(product);
-                ps.setInt(1, idventa);
+                ps.setInt(1, id_venta);
                 rs = ps.executeQuery();
                 while (rs.next()) {
                     double subTotal = rs.getInt("cantidad") * rs.getDouble("precio");

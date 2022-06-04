@@ -3,7 +3,7 @@ package modelos;
 
 public class Detalle {
     private int id;
-    private int id_pro;
+    private String codigo;
     private int cantidad;
     private double precio;
     private int id_venta;
@@ -12,9 +12,9 @@ public class Detalle {
         
     }
 
-    public Detalle(int id, int id_pro, int cantidad, double precio, int id_venta) {
+    public Detalle(int id, String codigo, int cantidad, double precio, int id_venta) {
         this.id = id;
-        this.id_pro = id_pro;
+        this.codigo = codigo;
         this.cantidad = cantidad;
         this.precio = precio;
         this.id_venta = id_venta;
@@ -28,12 +28,12 @@ public class Detalle {
         this.id = id;
     }
 
-    public int getId_pro() {
-        return id_pro;
+    public String getCodProducto() {
+        return codigo;
     }
 
-    public void setId_pro(int id_pro) {
-        this.id_pro = id_pro;
+    public void setCodProducto(String id_pro) {
+        this.codigo = id_pro;
     }
 
     public int getCantidad() {
